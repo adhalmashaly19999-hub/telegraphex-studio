@@ -207,7 +207,7 @@ async function seedServices() {
       ],
     },
     {
-      slug: "flexible-payment-collection", icon: "CreditCard", color: "green", order: 2, showOnHome: true,
+      slug: "flexible-payment-collection", icon: "Banknote", color: "white", order: 2, showOnHome: true,
       title: { en: "Flexible Payment Collection", ar: "تحصيل مدفوعات مرن" },
       desc: { en: "Collect however your customers want to pay.", ar: "اجمع كما يفضل عملاؤك الدفع." },
       features: [
@@ -218,7 +218,7 @@ async function seedServices() {
       ],
     },
     {
-      slug: "ai-powered-routing", icon: "Route", color: "gold", order: 3, showOnHome: true,
+      slug: "ai-powered-routing", icon: "Route", color: "black", order: 3, showOnHome: true,
       title: { en: "AI-Powered Routing", ar: "توجيه مدعوم بالذكاء الاصطناعي" },
       desc: { en: "Smart routes that adapt to real-world conditions.", ar: "مسارات ذكية تتكيف مع الظروف الحقيقية." },
       features: [
@@ -240,7 +240,7 @@ async function seedServices() {
       ],
     },
     {
-      slug: "return-management", icon: "RotateCcw", color: "green", order: 5, showOnHome: false,
+      slug: "return-management", icon: "RotateCcw", color: "black", order: 5, showOnHome: false,
       title: { en: "Return Management", ar: "إدارة المرتجعات" },
       desc: { en: "Hassle-free reverse logistics.", ar: "لوجستيات عكسية سلسة." },
       features: [
@@ -251,7 +251,7 @@ async function seedServices() {
       ],
     },
     {
-      slug: "analytics-dashboard", icon: "BarChart3", color: "gold", order: 6, showOnHome: false,
+      slug: "analytics-dashboard", icon: "BarChart3", color: "white", order: 6, showOnHome: false,
       title: { en: "Analytics Dashboard", ar: "لوحة تحليلات" },
       desc: { en: "Data that helps you ship smarter.", ar: "بيانات تساعدك على الشحن بذكاء." },
       features: [

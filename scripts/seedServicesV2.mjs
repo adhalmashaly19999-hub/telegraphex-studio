@@ -17,6 +17,10 @@ const oldServiceIds = [
   "service-analytics-dashboard",
 ];
 
+// Mirrors the current live services. Slugs map to the brand's 3D renders in
+// app/src/lib/serviceImages.ts (domestic/international/warehouses/shipment
+// types show renders; the rest fall back to icon tiles). Colors follow the
+// brand book's iconography rule: white on red, or red/white on black.
 const services = [
   {
     slug: "domestic-shipping",
@@ -39,7 +43,7 @@ const services = [
   {
     slug: "international-shipping",
     icon: "Globe",
-    color: "green",
+    color: "black",
     order: 2,
     showOnHome: true,
     title: { en: "International Shipping", ar: "شحن دولي" },
@@ -57,7 +61,7 @@ const services = [
   {
     slug: "warehouses-storage",
     icon: "Package",
-    color: "gold",
+    color: "red",
     order: 3,
     showOnHome: true,
     title: { en: "Warehouses & Storage", ar: "مستودعات و مخازن" },
@@ -93,7 +97,7 @@ const services = [
   {
     slug: "analytics-reports",
     icon: "BarChart3",
-    color: "green",
+    color: "black",
     order: 5,
     showOnHome: false,
     title: { en: "Analytics & Reports", ar: "تحليلات وتقارير" },
@@ -111,7 +115,7 @@ const services = [
   {
     slug: "shipment-types",
     icon: "Layers",
-    color: "gold",
+    color: "black",
     order: 6,
     showOnHome: false,
     title: { en: "Shipment Types", ar: "انواع الشحنات" },
@@ -130,9 +134,9 @@ const services = [
 
 async function run() {
   for (const id of oldServiceIds) {
-    await client.delete(id);
+    await client.delete(id).catch(() => {});
   }
-  console.log(`✓ removed ${oldServiceIds.length} old services`);
+  console.log(`✓ removed up to ${oldServiceIds.length} old services`);
 
   for (const s of services) {
     await client.createOrReplace({
@@ -148,7 +152,7 @@ async function run() {
       features: s.features.map((f, i) => ({ _type: "localeString", _key: `f-${i}`, ...f })),
     });
   }
-  console.log(`✓ seeded ${services.length} new services`);
+  console.log(`✓ seeded ${services.length} services`);
 }
 
 run().catch((err) => {

@@ -15,6 +15,8 @@ export default defineType({
         list: [
           'MapPin', 'CreditCard', 'Route', 'Zap', 'Clock', 'Package',
           'RotateCcw', 'ArrowLeftRight', 'Globe', 'Code2', 'BarChart3', 'Layers',
+          'Truck', 'Warehouse', 'Banknote', 'Repeat', 'PackageCheck',
+          'ShieldCheck', 'Timer', 'Boxes', 'Headset',
         ],
       },
       validation: (Rule) => Rule.required(),
@@ -23,7 +25,7 @@ export default defineType({
       name: 'color',
       title: 'Accent color',
       type: 'string',
-      options: {list: ['red', 'green', 'gold']},
+      options: {list: ['red', 'black', 'white']},
       validation: (Rule) => Rule.required(),
     }),
     defineField({
