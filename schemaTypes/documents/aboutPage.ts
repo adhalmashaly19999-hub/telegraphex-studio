@@ -35,6 +35,12 @@ export default defineType({
     }),
 
     defineField({name: 'teamHeading', title: 'Team Section Heading', type: 'localeString'}),
+    defineField({
+      name: 'teamPhoto',
+      title: 'Team Photo',
+      description: 'A real group photo of the team, shown in the Team section.',
+      type: 'image',
+    }),
   ],
   preview: {
     prepare: () => ({title: 'About Page'}),

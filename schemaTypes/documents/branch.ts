@@ -14,6 +14,7 @@ export default defineType({
     defineField({name: 'isMain', title: 'Main / HQ Branch', type: 'boolean', initialValue: false}),
     defineField({name: 'lat', title: 'Latitude', type: 'number'}),
     defineField({name: 'lng', title: 'Longitude', type: 'number'}),
+    defineField({name: 'mapUrl', title: 'Google Maps Link', type: 'url'}),
     defineField({name: 'order', title: 'Order', type: 'number'}),
   ],
   orderings: [
