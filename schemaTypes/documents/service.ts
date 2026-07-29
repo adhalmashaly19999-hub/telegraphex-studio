@@ -1,4 +1,5 @@
 import {defineType, defineField} from 'sanity'
+import {heroBackgroundFields} from '../shared/heroBackgroundFields'
 
 export default defineType({
   name: 'service',
@@ -70,6 +71,15 @@ export default defineType({
       initialValue: false,
     }),
     defineField({name: 'order', title: 'Order', type: 'number'}),
+
+    // --- Detail page content (shown at /services/<slug>) ---
+    ...heroBackgroundFields(),
+    defineField({
+      name: 'body',
+      title: 'Detail Page Content',
+      description: 'Longer write-up shown on this service\'s own page. Leave empty and the page will just show the short description and feature bullets above.',
+      type: 'localeBlockContent',
+    }),
   ],
   orderings: [
     {title: 'Order', name: 'orderAsc', by: [{field: 'order', direction: 'asc'}]},
