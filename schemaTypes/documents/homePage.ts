@@ -69,8 +69,6 @@ export default defineType({
       ],
     }),
 
-    defineField({name: 'coverageHeading', title: 'Coverage Section Heading', type: 'localeString'}),
-
     defineField({name: 'statsHeading', title: 'Stats Section Heading', type: 'localeString'}),
     defineField({name: 'statsSubtitle', title: 'Stats Section Subtitle', type: 'localeText'}),
     defineField({
