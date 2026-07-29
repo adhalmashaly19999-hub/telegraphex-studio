@@ -1,5 +1,6 @@
 import {defineType, defineField} from 'sanity'
 import {requireBothLanguages} from '../validators/requireBothLanguages'
+import {heroBackgroundFields} from '../shared/heroBackgroundFields'
 
 export default defineType({
   name: 'getStartedPage',
@@ -9,6 +10,7 @@ export default defineType({
   fields: [
     defineField({name: 'heading', title: 'Heading', type: 'localeString', validation: requireBothLanguages('headings')}),
     defineField({name: 'subheading', title: 'Subheading', type: 'localeText', validation: requireBothLanguages('subheadings')}),
+    ...heroBackgroundFields(),
   ],
   preview: {
     prepare: () => ({title: 'Get Started Page'}),

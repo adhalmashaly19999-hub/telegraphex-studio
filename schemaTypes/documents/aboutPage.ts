@@ -1,4 +1,5 @@
 import {defineType, defineField} from 'sanity'
+import {heroBackgroundFields} from '../shared/heroBackgroundFields'
 
 export default defineType({
   name: 'aboutPage',
@@ -7,6 +8,7 @@ export default defineType({
   fields: [
     defineField({name: 'heroTitle', title: 'Hero Title', type: 'localeString'}),
     defineField({name: 'heroSubtitle', title: 'Hero Subtitle', type: 'localeText'}),
+    ...heroBackgroundFields(),
 
     defineField({name: 'storyHeading', title: 'Story Heading', type: 'localeString'}),
     defineField({

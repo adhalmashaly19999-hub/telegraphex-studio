@@ -7,6 +7,13 @@ export default defineType({
   fields: [
     defineField({name: 'heroTitle', title: 'Hero Title', type: 'localeString'}),
     defineField({name: 'heroSubtitle', title: 'Hero Subtitle', type: 'localeText'}),
+    defineField({
+      name: 'heroImage',
+      title: 'Hero Background Image (optional)',
+      description: 'Overrides the default truck photo used behind the homepage hero. Leave empty to keep the default.',
+      type: 'image',
+      options: {hotspot: true},
+    }),
 
     defineField({name: 'servicesHeading', title: 'Services Section Heading', type: 'localeString'}),
     defineField({name: 'servicesSubtitle', title: 'Services Section Subtitle', type: 'localeText'}),

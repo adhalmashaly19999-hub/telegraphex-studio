@@ -26,6 +26,9 @@ import termsPage from './documents/termsPage'
 import getStartedPage from './documents/getStartedPage'
 import careersPage from './documents/careersPage'
 import servicesPage from './documents/servicesPage'
+import contactPage from './documents/contactPage'
+import trackPage from './documents/trackPage'
+import branchesPage from './documents/branchesPage'
 
 export const schemaTypes = [
   // Reusable objects
@@ -51,6 +54,9 @@ export const schemaTypes = [
   getStartedPage,
   careersPage,
   servicesPage,
+  contactPage,
+  trackPage,
+  branchesPage,
 
   // Collections
   service,

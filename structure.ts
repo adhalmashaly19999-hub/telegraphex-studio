@@ -3,6 +3,7 @@ import type {StructureResolver} from 'sanity/structure'
 const SINGLETON_TYPES = new Set([
   'homePage', 'aboutPage', 'seoSettings', 'companyInfo',
   'privacyPage', 'termsPage', 'getStartedPage', 'careersPage', 'servicesPage',
+  'contactPage', 'trackPage', 'branchesPage',
 ])
 
 export const structure: StructureResolver = (S) =>
@@ -29,6 +30,18 @@ export const structure: StructureResolver = (S) =>
         .title('Get Started Page')
         .id('getStartedPage')
         .child(S.document().schemaType('getStartedPage').documentId('getStartedPage')),
+      S.listItem()
+        .title('Contact Page')
+        .id('contactPage')
+        .child(S.document().schemaType('contactPage').documentId('contactPage')),
+      S.listItem()
+        .title('Track Page')
+        .id('trackPage')
+        .child(S.document().schemaType('trackPage').documentId('trackPage')),
+      S.listItem()
+        .title('Branches Page')
+        .id('branchesPage')
+        .child(S.document().schemaType('branchesPage').documentId('branchesPage')),
       S.listItem()
         .title('Privacy Policy Page')
         .id('privacyPage')
