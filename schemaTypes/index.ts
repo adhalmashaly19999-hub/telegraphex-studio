@@ -20,6 +20,12 @@ import seoSettings from './documents/seoSettings'
 import clientLogo from './documents/clientLogo'
 import deliveryZone from './documents/deliveryZone'
 import landingPage from './documents/landingPage'
+import companyInfo from './documents/companyInfo'
+import privacyPage from './documents/privacyPage'
+import termsPage from './documents/termsPage'
+import getStartedPage from './documents/getStartedPage'
+import careersPage from './documents/careersPage'
+import servicesPage from './documents/servicesPage'
 
 export const schemaTypes = [
   // Reusable objects
@@ -39,6 +45,12 @@ export const schemaTypes = [
   homePage,
   aboutPage,
   seoSettings,
+  companyInfo,
+  privacyPage,
+  termsPage,
+  getStartedPage,
+  careersPage,
+  servicesPage,
 
   // Collections
   service,
