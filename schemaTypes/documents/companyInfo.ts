@@ -9,20 +9,20 @@ export default defineType({
   fields: [
     defineField({
       name: 'phone',
-      title: 'Main Phone (for tel: links)',
-      description: 'International format, e.g. +201110064636',
+      title: 'Sales Phone (for tel: links)',
+      description: 'International format, e.g. +201110064636. This is the site\'s primary "call us" number (nav bar, footer, structured data) — it also happens to be the sales line.',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'phoneDisplay',
-      title: 'Main Phone (display format)',
+      title: 'Sales Phone (display format)',
       description: 'e.g. +20 111 006 4636',
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
-    defineField({name: 'salesPhone', title: 'Sales Phone (for tel: links)', type: 'string'}),
-    defineField({name: 'salesPhoneDisplay', title: 'Sales Phone (display format)', type: 'string'}),
+    defineField({name: 'supportPhone', title: 'Support Phone (for tel: links)', type: 'string'}),
+    defineField({name: 'supportPhoneDisplay', title: 'Support Phone (display format)', type: 'string'}),
     defineField({
       name: 'whatsappNumber',
       title: 'WhatsApp Number',
