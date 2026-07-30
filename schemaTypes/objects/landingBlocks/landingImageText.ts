@@ -28,7 +28,14 @@ export default defineType({
       name: 'imagePosition',
       title: 'Image Position',
       type: 'string',
-      options: {list: ['left', 'right']},
+      options: {
+        list: [
+          {title: 'Left (side-by-side)', value: 'left'},
+          {title: 'Right (side-by-side)', value: 'right'},
+          {title: 'Above text', value: 'above'},
+          {title: 'Below text', value: 'below'},
+        ],
+      },
       initialValue: 'left',
       validation: (Rule) => Rule.required(),
     }),
