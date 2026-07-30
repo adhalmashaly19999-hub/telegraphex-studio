@@ -6,6 +6,7 @@ export default defineType({
   type: 'object',
   fields: [
     defineField({name: 'heading', title: 'Heading (optional)', type: 'localeString'}),
+    defineField({name: 'subheading', title: 'Subheading (optional)', type: 'localeText'}),
     defineField({
       name: 'formId',
       title: 'Tally Form ID',

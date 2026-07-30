@@ -1,10 +1,21 @@
 import type {StructureResolver} from 'sanity/structure'
 
-const SINGLETON_TYPES = new Set([
-  'homePage', 'aboutPage', 'seoSettings', 'companyInfo',
-  'privacyPage', 'termsPage', 'getStartedPage', 'careersPage', 'servicesPage',
-  'contactPage', 'trackPage', 'branchesPage',
-])
+const SINGLETON_TYPES = new Set(['homePage', 'trackPage', 'companyInfo', 'seoSettings', 'sitePage'])
+
+// One S.listItem() per flexible sitePage document — same "sections" schema
+// underneath, just a fixed pageKey/documentId per page.
+const SITE_PAGES: {id: string; title: string}[] = [
+  {id: 'sitePage-about', title: 'About Page'},
+  {id: 'sitePage-services', title: 'Services Page'},
+  {id: 'sitePage-careers', title: 'Careers Page'},
+  {id: 'sitePage-getStarted', title: 'Get Started Page'},
+  {id: 'sitePage-contact', title: 'Contact Page'},
+  {id: 'sitePage-branches', title: 'Branches Page'},
+  {id: 'sitePage-coverage', title: 'Coverage Page'},
+  {id: 'sitePage-faq', title: 'FAQ Page'},
+  {id: 'sitePage-privacy', title: 'Privacy Policy Page'},
+  {id: 'sitePage-terms', title: 'Terms of Service Page'},
+]
 
 export const structure: StructureResolver = (S) =>
   S.list()
@@ -14,42 +25,16 @@ export const structure: StructureResolver = (S) =>
         .title('Home Page')
         .id('homePage')
         .child(S.document().schemaType('homePage').documentId('homePage')),
-      S.listItem()
-        .title('About Page')
-        .id('aboutPage')
-        .child(S.document().schemaType('aboutPage').documentId('aboutPage')),
-      S.listItem()
-        .title('Services Page')
-        .id('servicesPage')
-        .child(S.document().schemaType('servicesPage').documentId('servicesPage')),
-      S.listItem()
-        .title('Careers Page')
-        .id('careersPage')
-        .child(S.document().schemaType('careersPage').documentId('careersPage')),
-      S.listItem()
-        .title('Get Started Page')
-        .id('getStartedPage')
-        .child(S.document().schemaType('getStartedPage').documentId('getStartedPage')),
-      S.listItem()
-        .title('Contact Page')
-        .id('contactPage')
-        .child(S.document().schemaType('contactPage').documentId('contactPage')),
+      ...SITE_PAGES.map(({id, title}) =>
+        S.listItem()
+          .title(title)
+          .id(id)
+          .child(S.document().schemaType('sitePage').documentId(id))
+      ),
       S.listItem()
         .title('Track Page')
         .id('trackPage')
         .child(S.document().schemaType('trackPage').documentId('trackPage')),
-      S.listItem()
-        .title('Branches Page')
-        .id('branchesPage')
-        .child(S.document().schemaType('branchesPage').documentId('branchesPage')),
-      S.listItem()
-        .title('Privacy Policy Page')
-        .id('privacyPage')
-        .child(S.document().schemaType('privacyPage').documentId('privacyPage')),
-      S.listItem()
-        .title('Terms of Service Page')
-        .id('termsPage')
-        .child(S.document().schemaType('termsPage').documentId('termsPage')),
       S.listItem()
         .title('Company Contact Info')
         .id('companyInfo')

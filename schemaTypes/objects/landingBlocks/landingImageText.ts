@@ -8,15 +8,14 @@ export default defineType({
   fields: [
     defineField({
       name: 'heading',
-      title: 'Heading',
+      title: 'Heading (optional)',
       type: 'localeString',
-      validation: requireBothLanguages('headings'),
     }),
     defineField({
       name: 'text',
-      title: 'Text',
+      title: 'Text (optional)',
+      description: 'Leave empty for a photo-only section (e.g. a team photo with no accompanying copy).',
       type: 'localeText',
-      validation: requireBothLanguages('text bodies'),
     }),
     defineField({
       name: 'image',

@@ -7,9 +7,10 @@ import landingImageText from './objects/landingBlocks/landingImageText'
 import landingFeatureGrid from './objects/landingBlocks/landingFeatureGrid'
 import landingCta from './objects/landingBlocks/landingCta'
 import landingFormEmbed from './objects/landingBlocks/landingFormEmbed'
+import blockWidget from './objects/landingBlocks/blockWidget'
 
 import homePage from './documents/homePage'
-import aboutPage from './documents/aboutPage'
+import sitePage from './documents/sitePage'
 import service from './documents/service'
 import faqItem from './documents/faqItem'
 import teamMember from './documents/teamMember'
@@ -21,14 +22,7 @@ import clientLogo from './documents/clientLogo'
 import deliveryZone from './documents/deliveryZone'
 import landingPage from './documents/landingPage'
 import companyInfo from './documents/companyInfo'
-import privacyPage from './documents/privacyPage'
-import termsPage from './documents/termsPage'
-import getStartedPage from './documents/getStartedPage'
-import careersPage from './documents/careersPage'
-import servicesPage from './documents/servicesPage'
-import contactPage from './documents/contactPage'
 import trackPage from './documents/trackPage'
-import branchesPage from './documents/branchesPage'
 
 export const schemaTypes = [
   // Reusable objects
@@ -36,29 +30,23 @@ export const schemaTypes = [
   localeText,
   localeBlockContent,
 
-  // Landing page section blocks
+  // Flexible page-section blocks (used by Landing Pages and Site Pages alike)
   landingHero,
   landingRichText,
   landingImageText,
   landingFeatureGrid,
   landingCta,
   landingFormEmbed,
+  blockWidget,
 
   // Singletons
   homePage,
-  aboutPage,
-  seoSettings,
-  companyInfo,
-  privacyPage,
-  termsPage,
-  getStartedPage,
-  careersPage,
-  servicesPage,
-  contactPage,
   trackPage,
-  branchesPage,
+  companyInfo,
+  seoSettings,
 
   // Collections
+  sitePage,
   service,
   faqItem,
   teamMember,
