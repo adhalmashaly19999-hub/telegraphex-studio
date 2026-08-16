@@ -43,14 +43,25 @@ export default defineType({
               title: 'Icon',
               type: 'string',
               description:
-                'Must match a name the website actually recognizes (see app/src/lib/serviceVisuals.ts) — picking from this list is what keeps that in sync.',
+                'Must match a name the website actually recognizes (see app/src/lib/serviceVisuals.ts) — picking from this list is what keeps that in sync. Ignored if a Custom Icon Image is uploaded below.',
               options: {
                 list: [
                   'MapPin', 'CreditCard', 'Route', 'Zap', 'Clock', 'Package',
                   'RotateCcw', 'ArrowLeftRight', 'Globe', 'Code2', 'BarChart3', 'Layers',
                 ],
               },
-              validation: (Rule) => Rule.required(),
+              validation: (Rule) =>
+                Rule.custom((value, context) => {
+                  const parent = context.parent as {customIcon?: unknown} | undefined;
+                  if (!value && !parent?.customIcon) return 'Pick a preset icon or upload a Custom Icon Image below.';
+                  return true;
+                }),
+            }),
+            defineField({
+              name: 'customIcon',
+              title: 'Custom Icon Image (optional)',
+              description: 'Upload your own icon/logo to use instead of the preset list above.',
+              type: 'image',
             }),
             defineField({
               name: 'title',
