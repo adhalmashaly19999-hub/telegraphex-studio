@@ -11,11 +11,20 @@ import {defineField} from 'sanity'
 export function heroBackgroundFields() {
   return [
     defineField({
-      name: 'heroImage',
-      title: 'Hero Background Image (optional)',
-      description: 'If set, this image is used as the hero section background instead of the color below.',
-      type: 'image',
-      options: {hotspot: true},
+      name: 'heroImages',
+      title: 'Hero Background Image(s) (optional)',
+      description: 'Add one photo for a static background, or several to turn this hero into an auto-advancing slider. Used instead of the color below when set.',
+      type: 'array',
+      of: [{type: 'image', options: {hotspot: true}}],
+    }),
+    defineField({
+      name: 'heroSlideDuration',
+      title: 'Seconds Between Slides',
+      description: 'Only used when there are 2+ Hero Background Images.',
+      type: 'number',
+      initialValue: 5,
+      validation: (Rule) => Rule.min(1).max(60),
+      hidden: ({parent}) => ((parent as {heroImages?: unknown[]})?.heroImages?.length ?? 0) < 2,
     }),
     defineField({
       name: 'heroBackground',
