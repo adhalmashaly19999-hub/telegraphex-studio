@@ -19,6 +19,35 @@ export default defineType({
       type: 'image',
     }),
     defineField({
+      name: 'fontPairing',
+      title: 'Font Pairing',
+      description: 'Controls the typeface used for headings and body text across the whole site (curated combinations, so nothing loads broken).',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Modern (Default) — Poppins', value: 'modern'},
+          {title: 'Corporate Sans — Sora / Inter', value: 'corporate'},
+          {title: 'Friendly Rounded — Nunito', value: 'friendly'},
+          {title: 'Bold Editorial — Archivo / Source Sans', value: 'editorial'},
+        ],
+      },
+      initialValue: 'modern',
+    }),
+    defineField({
+      name: 'textScale',
+      title: 'Overall Text Size',
+      description: 'Scales every heading and paragraph on the site up or down together.',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Compact', value: 'compact'},
+          {title: 'Default', value: 'default'},
+          {title: 'Large', value: 'large'},
+        ],
+      },
+      initialValue: 'default',
+    }),
+    defineField({
       name: 'googleAnalyticsId',
       title: 'Google Analytics Measurement ID',
       description:
