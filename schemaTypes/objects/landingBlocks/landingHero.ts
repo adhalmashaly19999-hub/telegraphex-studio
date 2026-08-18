@@ -16,9 +16,9 @@ export default defineType({
     defineField({
       name: 'backgroundImages',
       title: 'Background Image(s)',
-      description: 'Add one photo for a static background, or several to turn this hero into an auto-advancing slider.',
+      description: 'Add one for a static background, or several to turn this hero into an auto-advancing slider. Each has its own desktop + optional mobile crop.',
       type: 'array',
-      of: [{type: 'image', options: {hotspot: true}}],
+      of: [{type: 'heroImageSlide'}],
     }),
     defineField({
       name: 'slideDuration',

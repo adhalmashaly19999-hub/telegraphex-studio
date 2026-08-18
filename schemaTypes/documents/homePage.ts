@@ -10,9 +10,9 @@ export default defineType({
     defineField({
       name: 'heroImages',
       title: 'Hero Background Image(s) (optional)',
-      description: 'Overrides the default truck photo used behind the homepage hero. Add one for a static photo, or several for an auto-advancing slider. Leave empty to keep the default.',
+      description: 'Overrides the default truck photo used behind the homepage hero. Add one for a static photo, or several for an auto-advancing slider — each with its own desktop + optional mobile crop. Leave empty to keep the default.',
       type: 'array',
-      of: [{type: 'image', options: {hotspot: true}}],
+      of: [{type: 'heroImageSlide'}],
     }),
     defineField({
       name: 'heroSlideDuration',

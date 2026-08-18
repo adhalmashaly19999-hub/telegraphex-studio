@@ -13,9 +13,9 @@ export function heroBackgroundFields() {
     defineField({
       name: 'heroImages',
       title: 'Hero Background Image(s) (optional)',
-      description: 'Add one photo for a static background, or several to turn this hero into an auto-advancing slider. Used instead of the color below when set.',
+      description: 'Add one for a static background, or several to turn this hero into an auto-advancing slider. Each has its own desktop + optional mobile crop. Used instead of the color below when set.',
       type: 'array',
-      of: [{type: 'image', options: {hotspot: true}}],
+      of: [{type: 'heroImageSlide'}],
     }),
     defineField({
       name: 'heroSlideDuration',

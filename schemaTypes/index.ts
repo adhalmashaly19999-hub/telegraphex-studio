@@ -1,6 +1,7 @@
 import localeString from './objects/localeString'
 import localeText from './objects/localeText'
 import localeBlockContent from './objects/localeBlockContent'
+import heroImageSlide from './objects/heroImageSlide'
 import landingHero from './objects/landingBlocks/landingHero'
 import landingRichText from './objects/landingBlocks/landingRichText'
 import landingImageText from './objects/landingBlocks/landingImageText'
@@ -29,6 +30,7 @@ export const schemaTypes = [
   localeString,
   localeText,
   localeBlockContent,
+  heroImageSlide,
 
   // Flexible page-section blocks (used by Landing Pages and Site Pages alike)
   landingHero,
