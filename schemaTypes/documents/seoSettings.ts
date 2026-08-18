@@ -19,33 +19,31 @@ export default defineType({
       type: 'image',
     }),
     defineField({
-      name: 'fontPairing',
-      title: 'Font Pairing',
-      description: 'Controls the typeface used for headings and body text across the whole site (curated combinations, so nothing loads broken).',
-      type: 'string',
-      options: {
-        list: [
-          {title: 'Modern (Default) — Poppins', value: 'modern'},
-          {title: 'Corporate Sans — Sora / Inter', value: 'corporate'},
-          {title: 'Friendly Rounded — Nunito', value: 'friendly'},
-          {title: 'Bold Editorial — Archivo / Source Sans', value: 'editorial'},
-        ],
-      },
-      initialValue: 'modern',
-    }),
-    defineField({
-      name: 'textScale',
-      title: 'Overall Text Size',
-      description: 'Scales every heading and paragraph on the site up or down together.',
-      type: 'string',
-      options: {
-        list: [
-          {title: 'Compact', value: 'compact'},
-          {title: 'Default', value: 'default'},
-          {title: 'Large', value: 'large'},
-        ],
-      },
-      initialValue: 'default',
+      name: 'typography',
+      title: 'Typography',
+      description: 'Font + size for each heading level and body text, controlled independently. Curated font list so nothing loads broken.',
+      type: 'object',
+      fields: [
+        defineField({name: 'h1', title: 'H1 — Largest headings (page titles, hero text)', type: 'typographyLevel'}),
+        defineField({name: 'h2', title: 'H2 — Section headings', type: 'typographyLevel'}),
+        defineField({name: 'h3', title: 'H3 — Sub-headings', type: 'typographyLevel'}),
+        defineField({name: 'body', title: 'Body — Paragraph text (size also scales everything else site-wide)', type: 'typographyLevel'}),
+        defineField({
+          name: 'arabicFont',
+          title: 'Arabic Font (used everywhere in Arabic, all levels)',
+          description: 'Arabic uses one flexible typeface across headings and body rather than a separate font per level.',
+          type: 'string',
+          options: {
+            list: [
+              {title: 'Cairo', value: 'cairo'},
+              {title: 'Tajawal', value: 'tajawal'},
+              {title: 'IBM Plex Sans Arabic', value: 'ibmPlexArabic'},
+              {title: 'Noto Naskh Arabic (serif)', value: 'notoNaskh'},
+            ],
+          },
+          initialValue: 'cairo',
+        }),
+      ],
     }),
     defineField({
       name: 'googleAnalyticsId',
