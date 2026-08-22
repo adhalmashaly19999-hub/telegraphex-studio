@@ -7,6 +7,13 @@ export default defineType({
   fields: [
     defineField({name: 'siteName', title: 'Site Name (used in title suffix)', type: 'string'}),
     defineField({
+      name: 'logo',
+      title: 'Site Logo',
+      description:
+        'Shown in the nav bar and footer across the whole site. Leave empty to keep the default Telegraph logo. Works best as a transparent PNG/SVG — the nav bar applies a color filter to it when scrolled over a white background.',
+      type: 'image',
+    }),
+    defineField({
       name: 'favicon',
       title: 'Favicon',
       description: 'The small icon shown in browser tabs. Square image works best (e.g. 512x512).',
